@@ -1,9 +1,13 @@
 package TaskFlow.dto;
 
 import TaskFlow.model.Role;
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class AuthenticationResponse {
     private String token;
     private Long userId;

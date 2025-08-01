@@ -2,13 +2,11 @@ package TaskFlow.dto;
 
 import lombok.*;
 
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-public class RegisterRequest {
+@Getter
+@Setter
+public class UserUpdateDto {
     private String username;
-    private String password;
     private String email;
 }
