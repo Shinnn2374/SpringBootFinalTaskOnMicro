@@ -7,12 +7,13 @@ spring:
   cloud:
     gateway:
       server:
-        routes:
-          - id: user-service
-            uri: lb://user-service
-            predicates:
-              - Path=/api/users/**
-eureka:
+        webmvc:
+          routes:
+            - id: user-service
+              uri: lb://user-service
+              predicates:
+                - Path=/api/users/**
+
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
