@@ -29,7 +29,7 @@ public class WebUserController {
 
     @GetMapping("/users/new")
     public String showCreateForm(Model model) {
-        model.addAttribute("user", new UserDto()); 
+        model.addAttribute("user", new UserDto());
         return "createUser";
     }
 
