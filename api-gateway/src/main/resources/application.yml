@@ -13,6 +13,10 @@ spring:
               uri: lb://user-service
               predicates:
                 - Path=/api/users/**
+            - id: task-service
+              uri: lb://task-service
+              predicates:
+                - Path=/api/tasks/**
 
   client:
     service-url:
