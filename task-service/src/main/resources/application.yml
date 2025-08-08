@@ -9,6 +9,12 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create-drop
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+        connection:
+          timeout: 5000
 
 eureka:
   client:

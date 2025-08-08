@@ -22,5 +22,8 @@ public class Task {
 
     private String description;
 
+    @Version
+    private Long version;
+
     private Long userId;
 }
