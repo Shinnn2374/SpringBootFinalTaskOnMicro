@@ -1,11 +1,16 @@
 package com.example.task_service.controller;
 
 import com.example.task_service.dao.TaskRepository;
+import com.example.task_service.dto.User;
+import com.example.task_service.feign.UserServiceClient;
 import com.example.task_service.model.Task;
-import com.example.task_service.service.UserServiceClient;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/tasks")
@@ -16,18 +21,12 @@ public class TaskController {
 
     @PostMapping
     public ResponseEntity<Task> createTask(@RequestBody Task task) {
-        ResponseEntity<User> response = userServiceClient.getUser(task.getUserId());
-        if (response.getStatusCode() != HttpStatus.OK) {
+        User user = userServiceClient.getUser(task.getUserId());
+        if (user == null) {
             return ResponseEntity.badRequest().build();
         }
+
         Task savedTask = taskRepository.save(task);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedTask);
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<Task> getTask(@PathVariable Long id) {
-        return taskRepository.findById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
     }
 }
