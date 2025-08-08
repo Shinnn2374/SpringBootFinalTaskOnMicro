@@ -17,6 +17,10 @@ spring:
               uri: lb://task-service
               predicates:
                 - Path=/api/tasks/**
+            - id: notification-service
+              uri: lb://notification-service
+              predicates:
+                - Path=/api/notifications/**
 
   client:
     service-url:
