@@ -21,8 +21,8 @@ public class TaskController {
 
     @PostMapping
     public ResponseEntity<Task> createTask(@RequestBody Task task) {
-        User user = userServiceClient.getUser(task.getUserId());
-        if (user == null) {
+        ResponseEntity<User> response = userServiceClient.getUser(task.getUserId());
+        if (response.getStatusCode() != HttpStatus.OK || response.getBody() == null) {
             return ResponseEntity.badRequest().build();
         }
 
