@@ -1,7 +1,8 @@
 package com.example.analytics_service.service;
 
-import com.example.analyticsservice.model.TaskStat;
-import com.example.analyticsservice.repository.StatsRepository;
+
+import com.example.analytics_service.dao.StatsRepository;
+import com.example.analytics_service.model.TaskStat;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;

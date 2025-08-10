@@ -1,7 +1,8 @@
 package com.example.analytics_service.controller;
 
-import com.example.analyticsservice.dto.StatsDTO;
-import com.example.analyticsservice.service.AnalyticsService;
+
+import com.example.analytics_service.dto.StatsDto;
+import com.example.analytics_service.service.AnalyticsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +15,7 @@ public class AnalyticsController {
     private final AnalyticsService analyticsService;
 
     @GetMapping("/user/{userId}")
-    public List<StatsDTO> getStats(@PathVariable Long userId) {
+    public List<StatsDto> getStats(@PathVariable Long userId) {
         return analyticsService.getStatsByUser(userId);
     }
 }

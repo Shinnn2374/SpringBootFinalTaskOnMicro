@@ -1,7 +1,7 @@
 package com.example.analytics_service.controller;
 
 
-import com.example.analyticsservice.service.AnalyticsService;
+import com.example.analytics_service.service.AnalyticsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
