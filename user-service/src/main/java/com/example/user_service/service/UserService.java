@@ -1,9 +1,10 @@
-package com.example.user_service;
+package com.example.user_service.service;
 
 import com.example.user_service.dao.UserRepository;
 import com.example.user_service.dto.UserResponseDto;
-import com.example.user_service.util.CustomPasswordEncoder;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -11,7 +12,8 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     private final UserRepository userRepository;
-    private final CustomPasswordEncoder customPasswordEncoder;
+    private final PasswordEncoder customPasswordEncoder;
+    private final ModelMapper modelMapper;
 
     public UserResponseDto registrationUser(UserResponseDto userDto) {
         return null;
