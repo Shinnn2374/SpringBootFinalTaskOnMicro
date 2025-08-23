@@ -11,36 +11,7 @@ spring:
       server:
         webmvc:
           routes:
-#            - id: user-service
-#              uri: lb://users-service
-#              predicates:
-#                - Path=/api/users/**
-#              filters:
-#                - name: RequestRateLimiter
-#                  args:
-#                    redis-rate-limiter.replenishRate: 10
-#                    redis-rate-limiter.burstCapacity: 20
-#                    redis-rate-limiter.requestedTokens: 1
-#                - name: CircuitBreaker
-#                  args:
-#                    name: usersService
-#                    fallbackUri: forward:/fallback/users
 
-#          - id: tasks-service
-#            uri: lb://tasks-service
-#            predicates:
-#              - Path=/api/tasks/**
-#            filters:
-#              - StripPrefix=1
-#              - name: RequestRateLimiter
-#                args:
-#                  redis-rate-limiter.replenishRate: 20
-#                  redis-rate-limiter.burstCapacity: 40
-#                  redis-rate-limiter.requestedTokens: 1
-#              - name: CircuitBreaker
-#                args:
-#                  name: tasksService
-#                  fallbackUri: forward:/fallback/tasks
 
 
 eureka:
