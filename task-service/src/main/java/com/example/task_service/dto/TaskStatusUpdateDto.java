@@ -6,5 +6,5 @@ import lombok.Data;
 @Data
 public class TaskStatusUpdateDto {
 
-    private TaskStatus taskStatus;
+    private TaskStatus status;
 }
