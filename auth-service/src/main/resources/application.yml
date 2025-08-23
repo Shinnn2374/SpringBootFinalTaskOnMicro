@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: AUTH-SERVICE
+    name: auth-service
   cloud:
     openfeign:
       client:
@@ -21,7 +21,7 @@ eureka:
     instance-id: ${spring.application.name}:${random.uuid}
 
 jwt:
-  secret: mySuperSecretKeyThatIsAtLeast256BitsLongForHS512Algorithm
+  secret: mySuperSecretKeyThatIsAtLeast256BitsLongForHS512Algorithm12345
   expiration: 3600000 # 1 hour in milliseconds
   issuer: todo-app-auth-service
 
