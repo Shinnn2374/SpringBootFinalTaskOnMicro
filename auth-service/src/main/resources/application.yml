@@ -8,24 +8,17 @@ spring:
     openfeign:
       client:
         config:
-          default:
-            connectTimeout: 5000
-            readTimeout: 5000
-            loggerLevel: basic
+          user-service:
+            url: http://user-service:8081
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://eureka-server:8761/eureka/
   instance:
-    instance-id: ${spring.application.name}:${random.uuid}
+    prefer-ip-address: true
 
 jwt:
   secret: mySuperSecretKeyThatIsAtLeast256BitsLongForHS512Algorithm12345
-  expiration: 3600000 # 1 hour in milliseconds
+  expiration: 3600000
   issuer: todo-app-auth-service
-
-logging:
-  level:
-    com.example.authservice: DEBUG
-    feign: DEBUG
